@@ -73,7 +73,6 @@
 </body>
 
 <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-
 <script>
   var _hmt = _hmt || [];
   (function() {
@@ -89,9 +88,7 @@
   xhr.send(JSON.stringify(obj));//这里要是没有参数传，就写null
   xhr.onreadystatechange = function () {
       if (xhr.status === 200 && xhr.readyState === 4) {
-        console.log(xhr)
-          //js处理数据
-      
+         // console.log(xhr)
       }
   }
 </script>
