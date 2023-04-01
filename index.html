@@ -28,10 +28,11 @@
   <p>您的捐赠是对 51吃瓜网社区 项目开发组最大的鼓励和支持。</p>
   <p>我们会坚持开发维护下去。 </p>
   <p>您的捐赠将被用于：持续和深入地开发文档和社区的建设和维护.</p>
+  <h2 id="js_rukou" style="display:none;"><a href="./nav.html">吃瓜入口</a></h2>
   <a href="./ad.html">点击捐赠 51吃瓜网社区 项目</a>
   <p>捐赠列表 持续更新中...</p>
   <h2><a href="./cpa.html">安卓吃瓜手机入口</a></h2>
-  <h2><a href="./nav.html">吃瓜导航</a></h2>
+  <h2><a href="./nav.html">吃瓜导航</a></h2> 
   <!-- 感谢以下企业和个人对 51吃瓜网社区 项目开发组的捐赠。 -->
  
 </div>
@@ -47,7 +48,6 @@
 </div>
 </body>
 <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-
 <script>
   var _hmt = _hmt || [];
   (function() {
@@ -56,18 +56,15 @@
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
-  const url='http://39.107.97.243/tongji/index.php';
-  var obj = { menu: 'Net'}; //要传的参数
-  var xhr = new XMLHttpRequest();  //这里没有考虑IE浏览器，如果需要择if判断加
-  xhr.open('GET', url,true);
-  xhr.send(JSON.stringify(obj));//这里要是没有参数传，就写null
-  xhr.onreadystatechange = function () {
-      if (xhr.status === 200 && xhr.readyState === 4) {
-        console.log(xhr)
-          //js处理数据
-      
-      }
-  }
+  var url_='https://api.meiyoufan.com/nav/?type=rukou';
+  $("#js_rukou").show();
+  $.ajax({url:url_,success:function(result){
+        $("#js_rukou").html(result);
+    }});
+    $.ajax({url:'https://api.meiyoufan.com/tongji/',success:function(result){
+        console.log(result)
+    }});
+ 
+
 </script>
-<script src="http://wm.lrswl.com/page/s.php?s=321497&w=950&h=90"></script>
 </html>
