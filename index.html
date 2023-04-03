@@ -12,13 +12,11 @@
 <body>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>51吃瓜网上线至今，已经过去13个月</h1>
-  <p>在过去这段期间，一直无偿给大家提供第一线的吃瓜热点。</p>
-  <p>截至今天，51吃瓜网，全网曝光累计达百万</p>
-
+  <h1 id="show">51吃瓜网上线至今，已经过去13个月</h1>
+  <p>在过去这段期间，一直无偿给大家提供第一线的吃瓜热点</p>
+  <p>吃瓜就来51吃瓜网</p>
 </div>
 <div class="container-fluid   text-center">
- 
   <p>目前准备搭建，51吃瓜网社区， 项目还停留在想法， 实则需要瓜友盟的支持!</p>
   <h2>51吃瓜网社区 资金筹备中</h2>
   <p>
@@ -46,6 +44,34 @@
       合作邮箱：<a href="mailto:517gua@outlook.com">517gua@outlook.com </a>
     </div> 
 </div>
+<script type="text/javascript">
+var chigua_url = 'https://m.51chigua.com';
+count_down('2022-03-28 00:00:00');
+function count_down(o){
+        var datatime=/^[\d]{4}-[\d]{1,2}-[\d]{1,2}( [\d]{1,2}:[\d]{1,2}(:[\d]{1,2})?)?$/ig,str='',conn,s;
+        if(!o.match(datatime)){
+                alert('参数格式为2020-01-01[ 01:01[:01]].\r其中[]内的内容可省略');
+                return false;
+        }
+        var sec=(new Date(o.replace(/-/ig,'/')).getTime() - new Date().getTime())/1000;
+        if(sec > 0){
+                conn='还有';
+        }else{
+                conn='已过去';
+                sec*=-1;
+        }
+        s={'天':sec/24/3600,'小时':sec/3600%24,'分':sec/60%60,'秒':sec%60};
+        for(i in s){
+                if(Math.floor(s[i])>0 ) str += Math.floor(s[i]) + i;
+        }
+        if(Math.floor(sec)==0){ str='0秒'; }
+        document.getElementById('show').innerHTML = '51吃瓜网上线至今,已经过去' + str + '';
+        setTimeout(function(){count_down(o)},1000);
+}
+function chiguaClick () {
+    window.location.href=chigua_url;
+}
+</script>
 </body>
 <script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
