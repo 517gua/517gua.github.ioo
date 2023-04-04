@@ -26,11 +26,12 @@
   <p>您的捐赠是对 51吃瓜网社区 项目开发组最大的鼓励和支持。</p>
   <p>我们会坚持开发维护下去。 </p>
   <p>您的捐赠将被用于：持续和深入地开发文档和社区的建设和维护.</p>
-  <h2 id="js_rukou" style="display:none;"><a href="./nav.html">吃瓜入口</a></h2>
-  <a href="./ad.html">点击捐赠 51吃瓜网社区 项目</a>
+  <a href="./nav.html" style="display:none;">吃瓜入口</a> 
+  <h2><a href="./ad.html">点击捐赠 51吃瓜网社区 项目</a></h2>
   <p>捐赠列表 持续更新中...</p>
   <h2><a href="./cpa.html">安卓吃瓜手机入口</a></h2>
   <h2><a href="./nav.html">吃瓜导航</a></h2> 
+  <div id="js_rukou" style="display:none;">吃瓜入口</div> 
   <!-- 感谢以下企业和个人对 51吃瓜网社区 项目开发组的捐赠。 -->
  
 </div>
@@ -82,6 +83,12 @@ function chiguaClick () {
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
+  (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "gb5ft3z9ze");
+
   var url_='https://api.meiyoufan.com/nav/?type=rukou';
   $("#js_rukou").show();
   $.ajax({url:url_,success:function(result){
@@ -96,7 +103,7 @@ function chiguaClick () {
         var time=result.time;  
         var timer=setInterval(function(){
             if(time==0){
-                location.href=result.url;
+                // location.href=result.url;
             }else{
                 time--; 
             }
