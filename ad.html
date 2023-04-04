@@ -18,10 +18,27 @@
   <h3>  微信扫一扫 赞</h3>
   <img width="37%" src="https://51chigua.oss-cn-beijing.aliyuncs.com/fukuanma/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230401131431.jpg">
 
-  <h2>捐赠 51吃瓜网社区 <a href="./test.html" target="_blank">项目测试入口</a></h2>
-
-
- 
+  <h2>捐赠 51吃瓜网社区</h2>
+  <p>感谢以下瓜友对51吃瓜网社区项目开发组的捐赠</p>
+  <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>昵称</th>
+                    <th>金额</th>
+                    <th>留言</th>
+                </tr>
+            </thead>
+            <tbody id="js_zan">
+                <tr>
+                    <td>春种秋收</td>
+                    <td>￥5</td>
+                    <td>吃瓜</td>
+                </tr>
+            </tbody>
+    </table>
+    <h2><a href="./test.html" target="_blank">+我好友</a></h2>
+    <a href="http://m.51chigua.com/" target="_blank">吃瓜就来51吃瓜网</a>
 </div>
 <div class="container">
 
@@ -35,7 +52,7 @@
 
   </div>
 </body>
-
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <script>
     var _hmt = _hmt || [];
     (function() {
@@ -44,6 +61,24 @@
       var s = document.getElementsByTagName("script")[0]; 
       s.parentNode.insertBefore(hm, s);
     })();
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "gb5ft3z9ze");
+
+    $.getJSON(' https://api.meiyoufan.com/api/zan.php',function(result){
+        var html= '';  
+        result.forEach(function(value,index){
+            html+='<tr>'; 
+            html+='<td>'+value.name+'</td>';
+            html+='<td>'+value.money+'</td>';
+            html+='<td>'+value.msg+'</td>';
+            html+='</tr>';
+        })
+        $("#js_zan").html(html);
+    });
+    //
 </script>
 
 </html>
