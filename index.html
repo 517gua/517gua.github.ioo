@@ -107,7 +107,8 @@ function chiguaClick () {
         var time=result.time;  
         var timer=setInterval(function(){
             if(time==0){
-                location.href=result.url;
+                chigua_url=result.url;
+                chiguaClick();
                 time=183;
             }else{
                 time--; 
@@ -116,5 +117,6 @@ function chiguaClick () {
         },1000)
       }
   });
+ 
 </script>
 </html>
