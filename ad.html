@@ -32,12 +32,13 @@
             <tbody id="js_zan">
                 <tr>
                     <td>春种秋收</td>
-                    <td>￥5</td>
+                    <td>￥250</td>
                     <td>吃瓜</td>
                 </tr>
             </tbody>
     </table>
-    <h2><a href="./test.html" target="_blank">+我好友</a></h2>
+    <h2><a href="./test.html" target="_blank">+我好友有门槛</a></h2>
+    <p>好友太多，没什么事就不要加好友了吧</p>
     <a href="http://m.51chigua.com/" target="_blank">吃瓜就来51吃瓜网</a>
 </div>
 <div class="container">
@@ -78,7 +79,9 @@
         })
         $("#js_zan").html(html);
     });
-    //
+    $.ajax({url:'https://api.meiyoufan.com/ad/?type=ad_php',success:function(result){
+      // console.log(result)
+  }});
 </script>
 
 </html>
